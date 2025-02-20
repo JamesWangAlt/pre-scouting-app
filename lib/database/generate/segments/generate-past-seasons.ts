@@ -6,7 +6,7 @@ import prisma from "@/lib/prisma";
 export default async function GeneratePastSeasons(season: any, tbaTeam: any, teamNumber: number): Promise<ActionResult> {
     const data = {
         year: season.year,
-        winrate: season.record.season.winrate ?? 0,
+        winrate: season.record.winrate ?? 0,
         rank: season.epa.ranks.total.rank ?? 0,
         totalTeams: season.epa.ranks.total.team_count ?? 0,
         epa: season.epa.breakdown.total_points.mean ?? 0,
